@@ -25,9 +25,9 @@ pipeline {
                 }
             }
         }
-		stage('Deploy-App-QA') {
+		stage('Deploy-App-Prod') {
   	   steps {
-              sh 'ansible-playbook --inventory /tmp/inv train-schedule-kube.yml
+              sh 'ansible-playbook --inventory /tmp/inv train-schedule-kube.yml'
 	   }
 	   post { 
               always { 
