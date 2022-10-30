@@ -25,5 +25,15 @@ pipeline {
                 }
             }
         }
-        }
+		stage('Deploy-App-QA') {
+  	   steps {
+              sh 'ansible-playbook --inventory /tmp/inv train-schedule-kube.yml
+	   }
+	   post { 
+              always { 
+                cleanWs() 
+	      }
+	   }
+	}
     }
+}
