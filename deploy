@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Deploy-App-QA') {
   	   steps {
-              sh 'ansible-playbook --inventory /tmp/inv $WORKSPACE/deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
+              sh 'cat /tmp/env'
 	   }
 	   post { 
               always { 
