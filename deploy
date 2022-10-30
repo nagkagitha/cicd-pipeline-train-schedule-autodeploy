@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Deploy-App-QA') {
   	   steps {
-              sh 'cat /tmp/inv'
+              sh 'ansible-playbook --inventory /tmp/inv train-schedule-kube.yml
 	   }
 	   post { 
               always { 
