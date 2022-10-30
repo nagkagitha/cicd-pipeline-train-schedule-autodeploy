@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Deploy-App-QA') {
   	   steps {
-              sh 'cat /tmp/env'
+              sh 'cat /tmp/inv'
 	   }
 	   post { 
               always { 
